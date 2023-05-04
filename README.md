@@ -3,6 +3,10 @@
 ## Requis pour l'installation:
 
 Debian11
+Avoir le package git installé
+````
+sudo apt install git
+````
 
 Installation:
 
