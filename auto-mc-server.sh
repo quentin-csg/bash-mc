@@ -17,12 +17,9 @@ if [ ! -d "${SERVER_DIR}" ]; then
     mkdir -p "${SERVER_DIR}"
 fi
 
-# Télécharger le fichier du serveur Minecraft si nécessaire
-if [ ! -f "${SERVER_DIR}/server.jar" ]; then
-    wget "${SERVER_DIR}/server.jar" https://launcher.mojang.com/v1/objects/8f7d743f50e7c7a2bcb44f702baeaa00c3629f4c/server.jar
-fi
-
 cd /opt/minecraft/$1
+wget https://piston-data.mojang.com/v1/objects/8f3112a1049751cc472ec13e397eade5336ca7ae/server.jar
+
 java -jar server.jar
 
 if [ -f eula.txt ]; then
