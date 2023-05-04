@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SERVER_NAME=$1
+folder_name=$1
 
 apt install openjdk-17-jdk openjdk-17-jre
 sudo dpkg -i jdk-17.0.6_linux-x64_bin.deb
@@ -13,6 +13,8 @@ sudo systemctl start firewalld
 sudo firewall-cmd --add-port=25565/tcp --permanent
 sudo firewall-cmd --reload
 
+mkdir /opt/mincraft/forlder_name
+cd /opt/mincraft/forlder_name
 
 wget https://piston-data.mojang.com/v1/objects/8f3112a1049751cc472ec13e397eade5336ca7ae/server.jar
 java -jar server.jar
@@ -25,7 +27,7 @@ fi
 
 if [ -f server.properties ]; then
     sed -i 's/online-mode=true/online-mode=false/g' server.properties
-    sed -i 's/motd=A minecraft Server/motd =SERVER_NAME/g' server.properties
+    sed -i 's/motd=^motd=.*/motd='"$1"'/g' server.properties
 else
     echo "file doesn't exist."
 fi
