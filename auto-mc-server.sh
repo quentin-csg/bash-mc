@@ -1,11 +1,11 @@
 #!/bin/bash
 
-apt install openjdk-17-jdk openjdk-17-jre
+sudo apt install openjdk-17-jdk openjdk-17-jre -y
 sudo dpkg -i jdk-17.0.6_linux-x64_bin.deb
 java -version
 
 
-sudo apt install firewalld
+sudo apt install firewalld -y
 sudo systemcd /ho   ccdctl enable firewalld
 sudo systemctl start firewalld
 sudo firewall-cmd --add-port=25565/tcp --permanent
