@@ -1,5 +1,16 @@
 #!/bin/bash
 
+apt install openjdk-17-jdk openjdk-17-jre
+sudo dpkg -i jdk-17.0.6_linux-x64_bin.deb
+java -version
+
+
+sudo apt install firewalld
+sudo systemctl enable firewalld
+sudo systemctl start firewalld
+sudo firewall-cmd --add-port=25565/tcp --permanent
+sudo firewall-cmd --reload
+
 if [ $# -ne 1 ]; then
     echo "Usage: $0 server-name"
     exit 1
