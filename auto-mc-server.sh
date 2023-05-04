@@ -23,14 +23,14 @@ wget https://piston-data.mojang.com/v1/objects/8f3112a1049751cc472ec13e397eade53
 java -jar server.jar
 
 if [ -f eula.txt ]; then
-    sed -i 's/eula=false/eula=true/g' eula.txt
+    sudo sed -i 's/eula=false/eula=true/g' eula.txt
 else
     echo "file doesn't exist."
 fi
-
+ls
 if [ -f server.properties ]; then
-    sed -i 's/online-mode=true/online-mode=false/g' server.properties
-    sed -i 's/motd=^motd=.*/motd='"$1"'/g' server.properties
+    sudo sed -i 's/online-mode=true/online-mode=false/g' server.properties
+    sudo sed -i 's/motd=^motd=.*/motd='"$1"'/g' server.properties
 else
     echo "file doesn't exist."
 fi
