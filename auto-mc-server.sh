@@ -8,7 +8,7 @@ java -version
 
 
 sudo apt install firewalld
-sudo systemctl enable firewalld
+sudo systemcd /ho   ccdctl enable firewalld
 sudo systemctl start firewalld
 sudo firewall-cmd --add-port=25565/tcp --permanent
 sudo firewall-cmd --reload
