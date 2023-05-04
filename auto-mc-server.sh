@@ -13,8 +13,8 @@ sudo systemctl start firewalld
 sudo firewall-cmd --add-port=25565/tcp --permanent
 sudo firewall-cmd --reload
 
-mkdir /opt/mincraft/forlder_name
-cd /opt/mincraft/forlder_name
+mkdir /opt/mincraft/folder_name
+cd /opt/mincraft/folder_name
 
 wget https://piston-data.mojang.com/v1/objects/8f3112a1049751cc472ec13e397eade5336ca7ae/server.jar
 java -jar server.jar
