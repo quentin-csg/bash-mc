@@ -11,12 +11,18 @@ sudo systemctl start firewalld
 sudo firewall-cmd --add-port=25565/tcp --permanent
 sudo firewall-cmd --reload
 
-cd /opt/minecraft/
-sudo mkdir $1
-cd $1
+SERVER_DIR="/opt/minecraft/$1"
 
+if [ ! -d "${SERVER_DIR}" ]; then
+    mkdir -p "${SERVER_DIR}"
+fi
 
-wget https://piston-data.mojang.com/v1/objects/8f3112a1049751cc472ec13e397eade5336ca7ae/server.jar
+# Télécharger le fichier du serveur Minecraft si nécessaire
+if [ ! -f "${SERVER_DIR}/server.jar" ]; then
+    wget "${SERVER_DIR}/server.jar" https://launcher.mojang.com/v1/objects/8f7d743f50e7c7a2bcb44f702baeaa00c3629f4c/server.jar
+fi
+
+cd /opt/minecraft/$1
 java -jar server.jar
 
 if [ -f eula.txt ]; then
