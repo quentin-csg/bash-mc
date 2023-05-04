@@ -30,7 +30,7 @@ fi
 ls
 if [ -f server.properties ]; then
     sudo sed -i 's/online-mode=true/online-mode=false/g' server.properties
-    sudo sed -i 's/motd=^motd=.*/motd='"$1"'/g' server.properties
+    sudo sed -i 's/motd=A Minecraft Server/motd='"$1"'/g' server.properties
 else
     echo "file doesn't exist."
 fi
