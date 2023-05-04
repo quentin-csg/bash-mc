@@ -1,7 +1,5 @@
 #!/bin/bash
 
-folder_name=$1
-
 apt install openjdk-17-jdk openjdk-17-jre
 sudo dpkg -i jdk-17.0.6_linux-x64_bin.deb
 java -version
@@ -13,8 +11,10 @@ sudo systemctl start firewalld
 sudo firewall-cmd --add-port=25565/tcp --permanent
 sudo firewall-cmd --reload
 
-mkdir /opt/mincraft/folder_name
-cd /opt/mincraft/folder_name
+cd /opt/minecraft/
+sudo mkdir $1
+cd $1
+
 
 wget https://piston-data.mojang.com/v1/objects/8f3112a1049751cc472ec13e397eade5336ca7ae/server.jar
 java -jar server.jar
