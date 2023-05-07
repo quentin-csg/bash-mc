@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt install openjdk-17-jdk openjdk-17-jre -y
-sudo dpkg -i jdk-17.0.6_linux-x64_bin.deb
+sudo dpkg -i jdk-17.0.6_linux-x64_bin.deb 
 java -version
 
 

@@ -2,8 +2,7 @@
 
 ## Requis pour l'installation:
 
-Debian11
-Avoir le package git installé
+Debian11 et avoir les packets git installé
 ````
 sudo apt install git
 ````
@@ -26,6 +25,6 @@ Lancer le script en mettant en argument le nom que vous voulez donner au serveur
 sudo ./auto-mc-server.sh nom
 ````
 
-Pour se connecter à ce serveur sur Minecraft:
-- prendre l'ip de la machine sur laquelle tourne le serveur Minecraft et ajouter le port 25565 (ip:25565)
+Pour se connecter au serveur sur Minecraft:
+- récupérer l'ip de la machine sur laquelle tourne le serveur Minecraft et ajouter le port 25565 (ip:25565)
 
